@@ -5,18 +5,23 @@
   <title>Ilkin Shahbazov | Mechanical / R&D Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    /* ====== GLOBAL COLORS & FONTS ====== */
     :root {
       --bg: #0f172a;
       --card: rgba(15, 23, 42, 0.5);
       --accent: #f97316;
       --text: #e2e8f0;
     }
+
+    /* ====== PAGE BASE ====== */
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
       font-family: Arial, sans-serif;
     }
+
+    /* ====== TOP BAR / NAVIGATION ====== */
     header {
       background: rgba(15, 23, 42, 0.75);
       backdrop-filter: blur(10px);
@@ -46,11 +51,15 @@
       border-color: var(--accent);
       color: #fff;
     }
+
+    /* ====== LAYOUT ====== */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
     }
+
+    /* ====== PAGES (HOME / PROJECTS / CERTS / CONTACT) ====== */
     .page {
       display: none;
       animation: fade 0.25s ease-in;
@@ -62,6 +71,8 @@
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* ====== CARDS ====== */
     .card {
       background: var(--card);
       border: 1px solid rgba(148, 163, 184, 0.12);
@@ -69,6 +80,8 @@
       padding: 16px 18px;
       margin-bottom: 16px;
     }
+
+    /* ====== PROJECT GRID ====== */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -87,18 +100,24 @@
     .project div {
       padding: 10px 12px 14px;
     }
+
+    /* ====== LINKS / BUTTON LOOK ====== */
     a.inline-btn {
       color: var(--accent);
       text-decoration: none;
       font-weight: bold;
       cursor: pointer;
     }
+
+    /* ====== YOUTUBE FRAME ====== */
     iframe {
       width: 100%;
       min-height: 320px;
       border: none;
       border-radius: 14px;
     }
+
+    /* ====== RESPONSIVE ====== */
     @media (max-width: 600px) {
       header { flex-wrap: wrap; }
       nav button { margin-top: 6px; }
@@ -106,9 +125,11 @@
   </style>
 </head>
 <body>
+  <!-- ====== TOP BAR / NAVIGATION ====== -->
   <header>
     <h1>Ilkin Shahbazov</h1>
     <nav>
+      <!-- MENU BUTTONS -->
       <button onclick="showPage('home')" id="btn-home">Home</button>
       <button onclick="showPage('projects')">Projects</button>
       <button onclick="showPage('certs')">Certificates</button>
@@ -117,8 +138,9 @@
     </nav>
   </header>
 
+  <!-- ====== MAIN CONTENT WRAPPER ====== -->
   <div class="container">
-    <!-- HOME PAGE -->
+    <!-- ====== HOME PAGE SECTION ====== -->
     <section id="home" class="page active">
       <div class="card">
         <h2>Mechanical / R&amp;D Engineer</h2>
@@ -127,25 +149,29 @@
       </div>
       <div class="card">
         <h3>Latest demo video</h3>
-        <!-- change VIDEO_ID -->
+        <!-- >>> PUT YOUR YOUTUBE ID HERE <<< -->
         <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" allowfullscreen></iframe>
       </div>
     </section>
 
-    <!-- PROJECTS PAGE -->
+    <!-- ====== PROJECTS PAGE SECTION ====== -->
     <section id="projects" class="page">
       <div class="card">
         <h2>Projects</h2>
         <p>Some of my mechanical design & manufacturing projects.</p>
         <div class="project-grid">
+          <!-- PROJECT CARD 1 -->
           <div class="project">
+            <!-- change project1.jpg to your real file name -->
             <img src="project1.jpg" alt="PTO Design">
             <div><b>PTO Design</b><br/>2024 – Heavy-duty power take-off unit.</div>
           </div>
+          <!-- PROJECT CARD 2 -->
           <div class="project">
             <img src="project2.jpg" alt="Gearbox 2-stage">
             <div><b>2-stage Gearbox</b><br/>Industrial application.</div>
           </div>
+          <!-- PROJECT CARD 3 -->
           <div class="project">
             <img src="project3.jpg" alt="CoreXY 3D Printer">
             <div><b>CoreXY 1000×1000×1000 3D Printer</b><br/>Large-volume AM prototype.</div>
@@ -157,7 +183,7 @@
       </div>
     </section>
 
-    <!-- CERTIFICATES PAGE -->
+    <!-- ====== CERTIFICATES PAGE SECTION ====== -->
     <section id="certs" class="page">
       <div class="card">
         <h2>Certificates &amp; Trainings</h2>
@@ -172,7 +198,7 @@
       </div>
     </section>
 
-    <!-- CONTACT PAGE -->
+    <!-- ====== CONTACT PAGE SECTION ====== -->
     <section id="contact" class="page">
       <div class="card">
         <h2>Contact</h2>
@@ -186,33 +212,40 @@
     </section>
   </div>
 
+  <!-- ====== JS: SIMPLE PAGE SWITCHING + BACK HISTORY ====== -->
   <script>
-    // simple in-page navigation with history
+    // we start from 'home'
     const historyStack = ['home'];
 
+    // show selected page and push to history
     function showPage(id) {
-      // hide all
+      // hide all pages
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      // show selected
+      // show chosen page
       document.getElementById(id).classList.add('active');
 
-      // highlight nav
+      // update nav button states
       document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
       if (id === 'home') {
         document.getElementById('btn-home').classList.add('active');
       }
 
-      // push to history
+      // push to history if it's a new page
       const last = historyStack[historyStack.length - 1];
       if (last !== id) historyStack.push(id);
     }
 
+    // go back to previous page in our own history
     function goBack() {
       if (historyStack.length > 1) {
+        // remove current
         historyStack.pop();
+        // get previous
         const prev = historyStack[historyStack.length - 1];
+        // show it
         showPage(prev);
       } else {
+        // if nothing to go back, go home
         showPage('home');
       }
     }

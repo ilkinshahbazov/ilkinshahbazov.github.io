@@ -11,20 +11,211 @@
       --accent: #f97316;
       --text: #e2e8f0;
     }
-    body { margin:0; background:var(--bg); color:var(--text); font-family:Arial, sans-serif; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+    }
     header {
-      background: rgba(15,23,42,0.75);
+      background: rgba(15, 23, 42, 0.75);
       backdrop-filter: blur(10px);
       padding: 12px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:sticky; top:0; z-index:10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    header h1 { font-size:18px; margin:0; }
+    header h1 {
+      font-size: 18px;
+      margin: 0;
+    }
     nav button {
-      background:transparent; border:1px solid rgba(226,232,240,0.2);
-      color:var(--text); padding:6px 12px; margin-left:6px;
-      border-radius:8px; cursor:pointer;
+      background: transparent;
+      border: 1px solid rgba(226, 232, 240, 0.2);
+      color: var(--text);
+      padding: 6px 12px;
+      margin-left: 6px;
+      border-radius: 8px;
+      cursor: pointer;
     }
-    nav button.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+    nav button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .page {
+      display: none;
+      animation: fade 0.25s ease-in;
+    }
+    .page.active {
+      display: block;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .project {
+      background: rgba(15, 23, 42, 0.3);
+      border: 1px solid rgba(148, 163, 184, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .project img {
+      width: 100%;
+      display: block;
+    }
+    .project div {
+      padding: 10px 12px 14px;
+    }
+    a.inline-btn {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      min-height: 320px;
+      border: none;
+      border-radius: 14px;
+    }
+    @media (max-width: 600px) {
+      header { flex-wrap: wrap; }
+      nav button { margin-top: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ilkin Shahbazov</h1>
+    <nav>
+      <button onclick="showPage('home')" id="btn-home">Home</button>
+      <button onclick="showPage('projects')">Projects</button>
+      <button onclick="showPage('certs')">Certificates</button>
+      <button onclick="showPage('contact')">Contact</button>
+      <button onclick="goBack()">Back</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+      <div class="card">
+        <h2>Mechanical / R&amp;D Engineer</h2>
+        <p><b>PTO, gearbox, transfer case, 3D printing</b> focused mechanical engineer. Here you can see selected industry projects, seminars and certificates.</p>
+        <p><a class="inline-btn" onclick="showPage('projects')">→ View projects</a></p>
+      </div>
+      <div class="card">
+        <h3>Latest demo video</h3>
+        <!-- change VIDEO_ID -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- PROJECTS PAGE -->
+    <section id="projects" class="page">
+      <div class="card">
+        <h2>Projects</h2>
+        <p>Some of my mechanical design & manufacturing projects.</p>
+        <div class="project-grid">
+          <div class="project">
+            <img src="project1.jpg" alt="PTO Design">
+            <div><b>PTO Design</b><br/>2024 – Heavy-duty power take-off unit.</div>
+          </div>
+          <div class="project">
+            <img src="project2.jpg" alt="Gearbox 2-stage">
+            <div><b>2-stage Gearbox</b><br/>Industrial application.</div>
+          </div>
+          <div class="project">
+            <img src="project3.jpg" alt="CoreXY 3D Printer">
+            <div><b>CoreXY 1000×1000×1000 3D Printer</b><br/>Large-volume AM prototype.</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES PAGE -->
+    <section id="certs" class="page">
+      <div class="card">
+        <h2>Certificates &amp; Trainings</h2>
+        <ol>
+          <li><b>SOLIDWORKS Sheet Metal Professional</b> – 25 March 2025</li>
+          <li>Goethe-Zertifikat B2 (German) – 2024</li>
+          <li>Hexagon / Romax seminars – 2024</li>
+        </ol>
+      </div>
+      <div class="card">
+        <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
+      </div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section id="contact" class="page">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Email: <b>ilkin@example.com</b></p>
+        <p>LinkedIn: <b>linkedin.com/in/ilkin</b></p>
+        <p>Location: Azerbaijan / Türkiye</p>
+      </div>
+      <div class="card">
+        <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // simple in-page navigation with history
+    const historyStack = ['home'];
+
+    function showPage(id) {
+      // hide all
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      // show selected
+      document.getElementById(id).classList.add('active');
+
+      // highlight nav
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      if (id === 'home') {
+        document.getElementById('btn-home').classList.add('active');
+      }
+
+      // push to history
+      const last = historyStack[historyStack.length - 1];
+      if (last !== id) historyStack.push(id);
+    }
+
+    function goBack() {
+      if (historyStack.length > 1) {
+        historyStack.pop();
+        const prev = historyStack[historyStack.length - 1];
+        showPage(prev);
+      } else {
+        showPage('home');
+      }
+    }
+  </script>
+</body>
+</html>

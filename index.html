@@ -33,13 +33,10 @@
       top: 0;
       z-index: 10;
     }
-    header h1 {
-      font-size: 18px;
-      margin: 0;
-    }
+    header h1 { font-size: 18px; margin: 0; }
     nav button {
       background: transparent;
-      border: 1px solid rgba(226, 232, 240, 0.2);
+      border: 1px solid rgba(226,232,240,0.2);
       color: var(--text);
       padding: 6px 12px;
       margin-left: 6px;
@@ -53,29 +50,20 @@
     }
 
     /* ====== LAYOUT ====== */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
     /* ====== PAGES (HOME / PROJECTS / CERTS / CONTACT) ====== */
-    .page {
-      display: none;
-      animation: fade 0.25s ease-in;
-    }
-    .page.active {
-      display: block;
-    }
+    .page { display: none; animation: fade 0.25s ease-in; }
+    .page.active { display: block; }
     @keyframes fade {
       from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     /* ====== CARDS ====== */
     .card {
       background: var(--card);
-      border: 1px solid rgba(148, 163, 184, 0.12);
+      border: 1px solid rgba(148,163,184,0.12);
       border-radius: 14px;
       padding: 16px 18px;
       margin-bottom: 16px;
@@ -88,34 +76,19 @@
       gap: 16px;
     }
     .project {
-      background: rgba(15, 23, 42, 0.3);
-      border: 1px solid rgba(148, 163, 184, 0.08);
+      background: rgba(15,23,42,0.3);
+      border: 1px solid rgba(148,163,184,0.08);
       border-radius: 12px;
       overflow: hidden;
     }
-    .project img {
-      width: 100%;
-      display: block;
-    }
-    .project div {
-      padding: 10px 12px 14px;
-    }
+    .project img { width: 100%; display: block; }
+    .project div { padding: 10px 12px 14px; }
 
     /* ====== LINKS / BUTTON LOOK ====== */
-    a.inline-btn {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
+    a.inline-btn { color: var(--accent); text-decoration: none; font-weight: bold; cursor: pointer; }
 
     /* ====== YOUTUBE FRAME ====== */
-    iframe {
-      width: 100%;
-      min-height: 320px;
-      border: none;
-      border-radius: 14px;
-    }
+    iframe { width: 100%; min-height: 320px; border: none; border-radius: 14px; }
 
     /* ====== RESPONSIVE ====== */
     @media (max-width: 600px) {
@@ -183,41 +156,35 @@
       </div>
     </section>
 
-      <li>
-        <a href="#" onclick="showPage('cswa-am')"><b>SOLIDWORKS Additive Manufacturing Associate (CSWA-AM)</b></a>
-        — <small>Passed</small>
-      </li>
+    <!-- ====== CERTIFICATES PAGE SECTION ====== -->
+    <section id="certs" class="page">
+      <div class="card">
+        <h2>Certificates &amp; Trainings</h2>
+        <ol>
+          <li>
+            <a href="#" onclick="showPage('cswp')"><b>SOLIDWORKS CAD Design Professional (CSWP)</b></a>
+            — <small>Passed</small>
+          </li>
+          <li>
+            <a href="#" onclick="showPage('cswpa-sm')"><b>SOLIDWORKS Sheet Metal Professional (CSWP-SM)</b></a>
+            — <small>Passed</small>
+          </li>
+          <li>
+            <a href="#" onclick="showPage('cswpa-wd')"><b>SOLIDWORKS Weldments Professional (CSWPA-WD)</b></a>
+            — <small>Passed</small>
+          </li>
+          <li>
+            <a href="#" onclick="showPage('cswa-am')"><b>SOLIDWORKS Additive Manufacturing Associate (CSWA-AM)</b></a>
+            — <small>Passed</small>
+          </li>
+        </ol>
+      </div>
+      <div class="card">
+        <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
+      </div>
+    </section>
 
-<!-- ====== CERTIFICATES PAGE SECTION ====== -->
-<section id="certs" class="page">
-  <div class="card">
-    <h2>Certificates &amp; Trainings</h2>
-    <ol>
-      <li>
-        <a href="#" onclick="showPage('cswp')"><b>SOLIDWORKS CAD Design Professional (CSWP)</b></a>
-        — <small>Passed</small>
-      </li>
-      <li>
-        <a href="#" onclick="showPage('cswpa-sm')"><b>SOLIDWORKS Sheet Metal Professional (CSWP-SM)</b></a>
-        — <small>Passed</small>
-      </li>
-      <li>
-        <a href="#" onclick="showPage('cswpa-wd')"><b>SOLIDWORKS Weldments Professional (CSWPA-WD)</b></a>
-        — <small>Passed</small>
-      </li>
-      <li>
-        <a href="#" onclick="showPage('cswa-am')"><b>SOLIDWORKS Additive Manufacturing Associate (CSWA-AM)</b></a>
-        — <small>Passed</small>
-      </li>
-    </ol>
-  </div>
-  <div class="card">
-    <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
-  </div>
-</section>
-
-    
-        <!-- ====== CONTACT PAGE SECTION ====== -->
+    <!-- ====== CONTACT PAGE SECTION ====== -->
     <section id="contact" class="page">
       <div class="card">
         <h2>Contact</h2>
@@ -230,192 +197,177 @@
       </div>
     </section>
 
-<!-- ====== CERT: CSWP DETAIL PAGE ====== -->
-<section id="cswp" class="page">
-  <div class="card">
-    <h2>CSWP — SOLIDWORKS CAD Design Professional</h2>
-    <p>
-      Verified credential:
-      <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9V4DE2M7NT" target="_blank" rel="noopener" style="color:inherit;">
-        View my CSWP credential
-      </a></b>
-    </p>
-    <p>
-      Official certification page:
-      <a href="https://www.solidworks.com/certifications/solidworks-cad-design-professional"
-         target="_blank" rel="noopener" style="color:inherit;">
-         solidworks.com/certifications/solidworks-cad-design-professional
-      </a>
-    </p>
+    <!-- ====== CERT: CSWP DETAIL PAGE ====== -->
+    <section id="cswp" class="page">
+      <div class="card">
+        <h2>CSWP — SOLIDWORKS CAD Design Professional</h2>
+        <p>
+          Verified credential:
+          <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9V4DE2M7NT" target="_blank" rel="noopener" style="color:inherit;">
+            View my CSWP credential
+          </a></b>
+        </p>
+        <p>
+          Official certification page:
+          <a href="https://www.solidworks.com/certifications/solidworks-cad-design-professional"
+             target="_blank" rel="noopener" style="color:inherit;">
+             solidworks.com/certifications/solidworks-cad-design-professional
+          </a>
+        </p>
 
-    <h3>What this certification covers (summary)</h3>
-    <ul>
-      <li>Create &amp; modify fully-defined parametric parts per given drawings/specs.</li>
-      <li>Use design intent with sketches, constraints, equations, and global variables.</li>
-      <li>Advanced features: revolves, sweeps, lofts, shells, fillets/chamfers, patterns.</li>
-      <li>Configurations &amp; design tables to handle design variants quickly.</li>
-      <li>Evaluate mass properties/center of mass; meet tolerance targets after changes.</li>
-    </ul>
+        <h3>What this certification covers (summary)</h3>
+        <ul>
+          <li>Create &amp; modify fully-defined parametric parts per given drawings/specs.</li>
+          <li>Use design intent with sketches, constraints, equations, and global variables.</li>
+          <li>Advanced features: revolves, sweeps, lofts, shells, fillets/chamfers, patterns.</li>
+          <li>Configurations &amp; design tables to handle design variants quickly.</li>
+          <li>Evaluate mass properties/center of mass; meet tolerance targets after changes.</li>
+        </ul>
 
-    <h3>Download credential PDF</h3>
-    <p>
-      <!-- After you upload the PDF to the repo root as 'cswp.pdf', this link will work -->
-      <a href="cswp.pdf" target="_blank" rel="noopener" style="color:inherit;">
-        Download my CSWP certificate (PDF)
-      </a>
-    </p>
-  </div>
-
-  <div class="card">
-    <p>
-      <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <a class="inline-btn" onclick="showPage('home')">Home</a>
-    </p>
-  </div>
-</section>
+        <h3>Download credential PDF</h3>
+        <p>
+          <a href="cswp.pdf" target="_blank" rel="noopener" style="color:inherit;">
+            Download my CSWP certificate (PDF)
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a class="inline-btn" onclick="showPage('home')">Home</a>
+        </p>
+      </div>
+    </section>
 
     <!-- ====== CERT: CSWPA-SM DETAIL PAGE ====== -->
-<section id="cswpa-sm" class="page">
-  <div class="card">
-   <h2>CSWP-SM — SOLIDWORKS Sheet Metal Professional</h2>
+    <section id="cswpa-sm" class="page">
+      <div class="card">
+        <h2>CSWP-SM — SOLIDWORKS Sheet Metal Professional</h2>
+        <p>
+          Verified credential:
+          <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-P6YW5MLHN4" target="_blank" rel="noopener" style="color:inherit;">
+            View my CSWPA–SM credential
+          </a></b>
+        </p>
+        <p>
+          Official certification page:
+          <a href="https://www.solidworks.com/certifications/cswpa-sheet-metal" target="_blank" rel="noopener" style="color:inherit;">
+            solidworks.com/certifications/cswpa-sheet-metal
+          </a>
+        </p>
 
+        <h3>What this certification covers (summary)</h3>
+        <ul>
+          <li>Sheet metal part creation from solid bodies or sketches; base flange & edge flange.</li>
+          <li>Bend features: sketched/hem/jog, miter & closed corners, break-corner/fillet.</li>
+          <li>Forming tools, louvers, beads; relief types and corner treatments.</li>
+          <li>Flatten, bend tables, K-factor / bend allowance basics, manufacturing readiness.</li>
+          <li>Editing bends, unfold/refold sequences; DXF export considerations.</li>
+        </ul>
 
-    <p>
-      Verified credential:
-      <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-P6YW5MLHN4" target="_blank" rel="noopener" style="color:inherit;">
-        View my CSWPA–SM credential
-      </a></b>
-    </p>
-
-    <p>
-      Official certification page:
-      <a href="https://www.solidworks.com/certifications/cswpa-sheet-metal" target="_blank" rel="noopener" style="color:inherit;">
-        solidworks.com/certifications/cswpa-sheet-metal
-      </a>
-    </p>
-
-    <h3>What this certification covers (summary)</h3>
-    <ul>
-      <li>Sheet metal part creation from solid bodies or sketches; base flange & edge flange.</li>
-      <li>Bend features: sketched/hem/jog, miter & closed corners, break-corner/fillet.</li>
-      <li>Forming tools, louvers, beads; relief types and corner treatments.</li>
-      <li>Flatten, bend tables, K-factor / bend allowance basics, manufacturing readiness.</li>
-      <li>Editing bends, unfold/refold sequences; DXF export considerations.</li>
-    </ul>
-
-    <h3>Download credential PDF</h3>
-    <p>
-      <!-- Upload this PDF to the repo root as 'cswpa-sheet-metal.pdf' (or change the name below) -->
-      <a href="cswpa-sheet-metal.pdf" target="_blank" rel="noopener" style="color:inherit;">
-        Download my CSWPA–SM certificate (PDF)
-      </a>
-    </p>
-  </div>
-
-  <div class="card">
-    <p>
-      <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <a class="inline-btn" onclick="showPage('home')">Home</a>
-    </p>
-  </div>
-</section>
+        <h3>Download credential PDF</h3>
+        <p>
+          <a href="cswpa-sheet-metal.pdf" target="_blank" rel="noopener" style="color:inherit;">
+            Download my CSWPA–SM certificate (PDF)
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a class="inline-btn" onclick="showPage('home')">Home</a>
+        </p>
+      </div>
+    </section>
 
     <!-- ====== CERT: CSWPA-WD DETAIL PAGE ====== -->
-<section id="cswpa-wd" class="page">
-  <div class="card">
-    <h2>CSWPA-WD — SOLIDWORKS Weldments Professional</h2>
+    <section id="cswpa-wd" class="page">
+      <div class="card">
+        <h2>CSWPA-WD — SOLIDWORKS Weldments Professional</h2>
+        <p>
+          Verified credential:
+          <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-DZXKHBS53J" target="_blank" rel="noopener" style="color:inherit;">
+            View my CSWPA-WD credential
+          </a></b>
+        </p>
+        <p>
+          Official certification page:
+          <a href="https://www.solidworks.com/certifications/advanced-weldments-cswpa-wd" target="_blank" rel="noopener" style="color:inherit;">
+            solidworks.com/certifications/advanced-weldments-cswpa-wd
+          </a>
+        </p>
 
-    <p>
-      Verified credential:
-      <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-DZXKHBS53J" target="_blank" rel="noopener" style="color:inherit;">
-        View my CSWPA-WD credential
-      </a></b>
-    </p>
+        <h3>What this certification covers (summary)</h3>
+        <ul>
+          <li>Weldments environment, structural members & custom profiles.</li>
+          <li>Groups, corner/miter treatments; Trim/Extend operations.</li>
+          <li>Gussets, end caps, weld beads; slot/tab basics.</li>
+          <li>Cut-List creation, properties, bounding box, part numbering.</li>
+          <li>Drawing prep for weldments: views, BOM/Cut-List tables.</li>
+        </ul>
 
-    <p>
-      Official certification page:
-      <a href="https://www.solidworks.com/certifications/advanced-weldments-cswpa-wd" target="_blank" rel="noopener" style="color:inherit;">
-        solidworks.com/certifications/advanced-weldments-cswpa-wd
-      </a>
-    </p>
+        <h3>Download credential PDF</h3>
+        <p>
+          <a href="cswpa-wd.pdf" target="_blank" rel="noopener" style="color:inherit;">
+            Download my CSWPA-WD certificate (PDF)
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a class="inline-btn" onclick="showPage('home')">Home</a>
+        </p>
+      </div>
+    </section>
 
-    <h3>What this certification covers (summary)</h3>
-    <ul>
-      <li>Weldments environment, structural members & custom profiles.</li>
-      <li>Groups, corner/miter treatments; Trim/Extend operations.</li>
-      <li>Gussets, end caps, weld beads; slot/tab basics.</li>
-      <li>Cut-List creation, properties, bounding box, part numbering.</li>
-      <li>Drawing prep for weldments: views, BOM/Cut-List tables.</li>
-    </ul>
+    <!-- ====== CERT: CSWA-AM DETAIL PAGE ====== -->
+    <section id="cswa-am" class="page">
+      <div class="card">
+        <h2>CSWA-AM — SOLIDWORKS Additive Manufacturing Associate</h2>
+        <p>
+          Verified credential:
+          <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-GWME5JQ9N2" target="_blank" rel="noopener" style="color:inherit;">
+            View my CSWA-AM credential
+          </a></b>
+        </p>
+        <p>
+          Official certification page:
+          <a href="https://www.solidworks.com/certifications/additive-manufacturing-cswa-additive-manufacturing"
+             target="_blank" rel="noopener" style="color:inherit;">
+            solidworks.com/certifications/additive-manufacturing-cswa-additive-manufacturing
+          </a>
+        </p>
 
-    <h3>Download credential PDF</h3>
-    <p>
-      <!-- PDF'yi repo köküne 'cswpa-wd.pdf' adıyla yüklersen bu link çalışır -->
-      <a href="cswpa-wd.pdf" target="_blank" rel="noopener" style="color:inherit;">
-        Download my CSWPA-WD certificate (PDF)
-      </a>
-    </p>
+        <h3>What this certification covers (summary)</h3>
+        <ul>
+          <li>AM fundamentals: processes (FDM, SLA, SLS, MJF, metal AM) and use-cases.</li>
+          <li>Design for Additive: overhangs, support strategy, wall/feature limits, tolerances.</li>
+          <li>Materials &amp; properties: polymers vs. metals, anisotropy, post-processing basics.</li>
+          <li>Build prep: orientation, nesting, layer height, infill, shells; STL/3MF basics.</li>
+          <li>Quality &amp; safety: defects, warping, validation checks, handling &amp; lab safety.</li>
+        </ul>
+
+        <h3>Download credential PDF</h3>
+        <p>
+          <a href="cswa-am.pdf" target="_blank" rel="noopener" style="color:inherit;">
+            Download my CSWA-AM certificate (PDF)
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a class="inline-btn" onclick="showPage('home')">Home</a>
+        </p>
+      </div>
+    </section>
   </div>
 
-  <div class="card">
-    <p>
-      <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <a class="inline-btn" onclick="showPage('home')">Home</a>
-    </p>
-  </div>
-</section>
-
-<!-- ====== CERT: CSWA-AM DETAIL PAGE ====== -->
-<section id="cswa-am" class="page">
-  <div class="card">
-    <h2>CSWA-AM — SOLIDWORKS Additive Manufacturing Associate</h2>
-
-    <p>
-      Verified credential:
-      <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-GWME5JQ9N2" target="_blank" rel="noopener" style="color:inherit;">
-        View my CSWA-AM credential
-      </a></b>
-    </p>
-
-    <p>
-      Official certification page:
-      <a href="https://www.solidworks.com/certifications/additive-manufacturing-cswa-additive-manufacturing"
-         target="_blank" rel="noopener" style="color:inherit;">
-        solidworks.com/certifications/additive-manufacturing-cswa-additive-manufacturing
-      </a>
-    </p>
-
-    <h3>What this certification covers (summary)</h3>
-    <ul>
-      <li>AM fundamentals: processes (FDM, SLA, SLS, MJF, metal AM) and use-cases.</li>
-      <li>Design for Additive: overhangs, support strategy, wall/feature limits, tolerances.</li>
-      <li>Materials &amp; properties: polymers vs. metals, anisotropy, post-processing basics.</li>
-      <li>Build prep: orientation, nesting, layer height, infill, shells; STL/3MF basics.</li>
-      <li>Quality &amp; safety: defects, warping, validation checks, handling &amp; lab safety.</li>
-    </ul>
-
-    <h3>Download credential PDF</h3>
-    <p>
-      <!-- PDF'yi repo köküne 'cswa-am.pdf' adıyla yüklersen bu link çalışır -->
-      <a href="cswa-am.pdf" target="_blank" rel="noopener" style="color:inherit;">
-        Download my CSWA-AM certificate (PDF)
-      </a>
-    </p>
-  </div>
-
-  <div class="card">
-    <p>
-      <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <a class="inline-btn" onclick="showPage('home')">Home</a>
-    </p>
-  </div>
-</section>
-
-    
   <!-- ====== JS: SIMPLE PAGE SWITCHING + BACK HISTORY ====== -->
   <script>
     // we start from 'home'
@@ -423,18 +375,12 @@
 
     // show selected page and push to history
     function showPage(id) {
-      // hide all pages
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      // show chosen page
       document.getElementById(id).classList.add('active');
 
-      // update nav button states
       document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-      if (id === 'home') {
-        document.getElementById('btn-home').classList.add('active');
-      }
+      if (id === 'home') document.getElementById('btn-home').classList.add('active');
 
-      // push to history if it's a new page
       const last = historyStack[historyStack.length - 1];
       if (last !== id) historyStack.push(id);
     }
@@ -442,14 +388,10 @@
     // go back to previous page in our own history
     function goBack() {
       if (historyStack.length > 1) {
-        // remove current
         historyStack.pop();
-        // get previous
         const prev = historyStack[historyStack.length - 1];
-        // show it
         showPage(prev);
       } else {
-        // if nothing to go back, go home
         showPage('home');
       }
     }

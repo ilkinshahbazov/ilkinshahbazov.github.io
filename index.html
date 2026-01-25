@@ -1,493 +1,532 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Ilkin Shahbazov | Mechanical / R&D Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    /* ====== LIGHT THEME: GLOBAL COLORS & FONTS ====== */
-    :root{
-      --bg: #f7f8fb;          /* page background */
-      --card: #ffffff;        /* card background */
-      --text: #111827;        /* main text color */
-      --accent: #f97316;      /* accent (orange) */
-      --border: #e5e7eb;      /* subtle border */
+!DOCTYPE html
+html lang=en
+head
+  meta charset=UTF-8 
+  titleIlkin Shahbazov  Mechanical  R&D Engineertitle
+  meta name=viewport content=width=device-width, initial-scale=1 
+  style
+     ====== LIGHT THEME GLOBAL COLORS & FONTS ====== 
+    root{
+      --bg #f7f8fb;           page background 
+      --card #ffffff;         card background 
+      --text #111827;         main text color 
+      --accent #f97316;       accent (orange) 
+      --border #e5e7eb;       subtle border 
     }
 
-    /* ====== PAGE BASE ====== */
+     ====== PAGE BASE ====== 
     body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family: Arial, Helvetica, sans-serif;
+      margin0;
+      backgroundvar(--bg);
+      colorvar(--text);
+      font-family Arial, Helvetica, sans-serif;
     }
 
-    /* ====== TOP BAR / NAVIGATION ====== */
+     ====== TOP BAR  NAVIGATION ====== 
     header{
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: saturate(180%) blur(10px);
-      padding:12px 20px;
-      display:flex; justify-content:space-between; align-items:center;
-      position:sticky; top:0; z-index:10;
-      border-bottom:1px solid var(--border);
+      background rgba(255,255,255,0.9);
+      backdrop-filter saturate(180%) blur(10px);
+      padding12px 20px;
+      displayflex; justify-contentspace-between; align-itemscenter;
+      positionsticky; top0; z-index10;
+      border-bottom1px solid var(--border);
     }
-    header h1{ font-size:18px; margin:0; }
+    header h1{ font-size18px; margin0; }
 
     nav button{
-      background:#fff;
-      border:1px solid var(--border);
-      color:var(--text);
-      padding:6px 12px; margin-left:6px; border-radius:8px; cursor:pointer;
-      transition: background .15s ease, box-shadow .15s ease;
+      background#fff;
+      border1px solid var(--border);
+      colorvar(--text);
+      padding6px 12px; margin-left6px; border-radius8px; cursorpointer;
+      transition background .15s ease, box-shadow .15s ease;
     }
-    nav button:hover{ background:#f3f4f6; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+    nav buttonhover{ background#f3f4f6; box-shadow0 1px 2px rgba(0,0,0,.04); }
     nav button.active{
-      background:var(--accent); border-color:var(--accent); color:#fff;
+      backgroundvar(--accent); border-colorvar(--accent); color#fff;
     }
 
-    /* ====== LAYOUT ====== */
-    .container{ max-width:1100px; margin:0 auto; padding:20px; }
+     ====== LAYOUT ====== 
+    .container{ max-width1100px; margin0 auto; padding20px; }
 
-    /* ====== PAGES ====== */
-    .page{ display:none; animation:fade .25s ease-in; }
-    .page.active{ display:block; }
-    @keyframes fade{ from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:translateY(0)} }
+     ====== PAGES ====== 
+    .page{ displaynone; animationfade .25s ease-in; }
+    .page.active{ displayblock; }
+    @keyframes fade{ from{opacity0; transformtranslateY(6px)} to{opacity1; transformtranslateY(0)} }
 
-    /* ====== CARDS ====== */
+     ====== CARDS ====== 
     .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:16px 18px; margin-bottom:16px;
-      box-shadow: 0 6px 14px rgba(0,0,0,.04);
+      backgroundvar(--card);
+      border1px solid var(--border);
+      border-radius14px;
+      padding16px 18px; margin-bottom16px;
+      box-shadow 0 6px 14px rgba(0,0,0,.04);
     }
 
-    /* ====== PROJECT GRID ====== */
-    .project-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+     ====== PROJECT GRID ====== 
+    .project-grid{ displaygrid; grid-template-columnsrepeat(auto-fit,minmax(240px,1fr)); gap16px; }
     .project{
-      background:#f9fafb;
-      border:1px solid var(--border);
-      border-radius:12px; overflow:hidden;
+      background#f9fafb;
+      border1px solid var(--border);
+      border-radius12px; overflowhidden;
     }
-    .project img{ width:100%; display:block; }
-    .project div{ padding:10px 12px 14px; }
+    .project img{ width100%; displayblock; }
+    .project div{ padding10px 12px 14px; }
 
-    /* ====== LINKS ====== */
-    a.inline-btn{ color:var(--accent); text-decoration:none; font-weight:bold; cursor:pointer; }
-    a.inline-btn:hover{ text-decoration:underline; }
+     ====== LINKS ====== 
+    a.inline-btn{ colorvar(--accent); text-decorationnone; font-weightbold; cursorpointer; }
+    a.inline-btnhover{ text-decorationunderline; }
 
-    /* ====== MEDIA / IFRAME & HERO ====== */
-    iframe{ width:100%; min-height:320px; border:none; border-radius:14px; }
-    .cert-hero{ border-radius:14px; overflow:hidden; margin-bottom:12px; }
-    .cert-hero img{ width:100%; display:block; max-height:360px; object-fit:cover; }
+     ====== MEDIA  IFRAME & HERO ====== 
+    iframe{ width100%; min-height320px; bordernone; border-radius14px; }
+    .cert-hero{ border-radius14px; overflowhidden; margin-bottom12px; }
+    .cert-hero img{ width100%; displayblock; max-height360px; object-fitcover; }
 
-    /* ====== RESPONSIVE ====== */
-    @media (max-width:600px){
-      header{ flex-wrap:wrap; }
-      nav button{ margin-top:6px; }
+     ====== RESPONSIVE ====== 
+    @media (max-width600px){
+      header{ flex-wrapwrap; }
+      nav button{ margin-top6px; }
     }
-  </style>
-</head>
-<body>
-  <!-- ====== TOP BAR / NAVIGATION ====== -->
-  <header>
-    <h1>Ilkin Shahbazov</h1>
-    <nav>
-      <!-- MENU BUTTONS in requested order -->
-      <button id="btn-home"     onclick="showPage('home')">Home</button>
-      <button id="btn-edu"      onclick="showPage('edu')">Education</button>
-      <button id="btn-certs"    onclick="showPage('certs')">Certificates</button>
-      <button id="btn-projects" onclick="showPage('projects')">Projects</button>
-      <button id="btn-contact"  onclick="showPage('contact')">Contact</button>
-      <button onclick="goBack()">Back</button>
-    </nav>
-  </header>
+  style
+head
+body
+  !-- ====== TOP BAR  NAVIGATION ====== --
+  header
+    h1Ilkin Shahbazovh1
+    nav
+      !-- MENU BUTTONS in requested order --
+      button id=btn-home     onclick=showPage('home')Homebutton
+      button id=btn-edu      onclick=showPage('edu')Educationbutton
+      button id=btn-certs    onclick=showPage('certs')Certificatesbutton
+      button id=btn-projects onclick=showPage('projects')Projectsbutton
+      button id=btn-contact  onclick=showPage('contact')Contactbutton
+      button onclick=goBack()Backbutton
+    nav
+  header
 
-  <!-- ====== MAIN CONTENT WRAPPER ====== -->
-  <div class="container">
+  !-- ====== MAIN CONTENT WRAPPER ====== --
+  div class=container
 
-    <!-- ====== HOME PAGE SECTION ====== -->
-    <section id="home" class="page active">
-      <div class="card">
-        <h2>Mechanical / R&amp;D Engineer</h2>
-        <p><b>PTO, gearbox, transfer case, 3D printing</b> focused mechanical engineer. Here you can see selected industry projects, seminars and certificates.</p>
-        <p><a class="inline-btn" onclick="showPage('projects')">→ View projects</a></p>
-      </div>
-      <div class="card">
-        <h3>Latest demo video</h3>
-        <!-- >>> PUT YOUR YOUTUBE ID HERE <<< -->
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" allowfullscreen></iframe>
-      </div>
-    </section>
+    !-- ====== HOME PAGE SECTION ====== --
+    section id=home class=page active
+      div class=card
+        h2Mechanical  R&amp;D Engineerh2
+        pbPTO, gearbox, transfer case, 3D printingb focused mechanical engineer. Here you can see selected industry projects, seminars and certificates.p
+        pa class=inline-btn onclick=showPage('projects')→ View projectsap
+      div
+      div class=card
+        h3Latest demo videoh3
+        !--  PUT YOUR YOUTUBE ID HERE  --
+        iframe src=httpswww.youtube.comembedVIDEO_ID title=YouTube video player allowfullscreeniframe
+      div
+    section
 
-    <!-- ====== EDUCATION PAGE SECTION ====== -->
-    <section id="edu" class="page">
-      <div class="card">
-        <h2>Education</h2>
-        <ol>
-          <li>
-            <a href="#" onclick="showPage('edu-lyceum')">
-              <b>Lyceum – TDV Baku Turkish Lyceum</b>
-            </a>
-            — <small>2005–2011</small>
-          </li>
-          <li>
-            <a href="#" onclick="showPage('edu-bachelor')"><b>Bachelor of Science</b></a>
-            — <small>Mechanical Engineering</small>
-          </li>
-          <li>
-            <a href="#" onclick="showPage('edu-master')"><b>Master of Science</b></a>
-            — <small>Mechanical / Manufacturing Engineering</small>
-          </li>
-        </ol>
-      </div>
-      <div class="card">
-        <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
-      </div>
-    </section>
+    !-- ====== EDUCATION PAGE SECTION ====== --
+    section id=edu class=page
+      div class=card
+        h2Educationh2
+        ol
+          li
+            a href=# onclick=showPage('edu-lyceum')
+              bLyceum – TDV Baku Turkish Lyceumb
+            a
+            — small2005–2011small
+          li
+          li
+            a href=# onclick=showPage('edu-bachelor')bBachelor of Scienceba
+            — smallMechanical Engineeringsmall
+          li
+          li
+            a href=# onclick=showPage('edu-master')bMaster of Scienceba
+            — smallMechanical  Manufacturing Engineeringsmall
+          li
+        ol
+      div
+      div class=card
+        pa class=inline-btn onclick=showPage('home')← Back to homeap
+      div
+    section
 
-    <!-- ====== CERTIFICATES PAGE SECTION ====== -->
-    <section id="certs" class="page">
-      <div class="card">
-        <h2>Certificates &amp; Trainings</h2>
-        <ol>
-          <li>
-            <a href="#" onclick="showPage('cswp')"><b>SOLIDWORKS CAD Design Professional (CSWP)</b></a>
-            — <small>Passed</small>
-          </li>
-          <li>
-            <a href="#" onclick="showPage('cswpa-sm')"><b>SOLIDWORKS Sheet Metal Professional (CSWP-SM)</b></a>
-            — <small>Passed</small>
-          </li>
-          <li>
-            <a href="#" onclick="showPage('cswpa-wd')"><b>SOLIDWORKS Weldments Professional (CSWPA-WD)</b></a>
-            — <small>Passed</small>
-          </li>
-          <li>
-            <a href="#" onclick="showPage('cswa-am')"><b>SOLIDWORKS Additive Manufacturing Associate (CSWA-AM)</b></a>
-            — <small>Passed</small>
-          </li>
-        </ol>
-      </div>
-      <div class="card">
-        <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
-      </div>
-    </section>
+    !-- ====== CERTIFICATES PAGE SECTION ====== --
+    section id=certs class=page
+      div class=card
+        h2Certificates &amp; Trainingsh2
+        ol
+          li
+            a href=# onclick=showPage('cswp')bSOLIDWORKS CAD Design Professional (CSWP)ba
+            — smallPassedsmall
+          li
+          li
+            a href=# onclick=showPage('cswpa-sm')bSOLIDWORKS Sheet Metal Professional (CSWP-SM)ba
+            — smallPassedsmall
+          li
+          li
+            a href=# onclick=showPage('cswpa-wd')bSOLIDWORKS Weldments Professional (CSWPA-WD)ba
+            — smallPassedsmall
+          li
+          li
+            a href=# onclick=showPage('cswa-am')bSOLIDWORKS Additive Manufacturing Associate (CSWA-AM)ba
+            — smallPassedsmall
+          li
+        ol
+      div
+      div class=card
+        pa class=inline-btn onclick=showPage('home')← Back to homeap
+      div
+    section
 
-    <!-- ====== PROJECTS PAGE SECTION ====== -->
-    <section id="projects" class="page">
-      <div class="card">
-        <h2>Projects</h2>
-        <p>Some of my mechanical design & manufacturing projects.</p>
-        <div class="project-grid">
-          <div class="project">
-            <img src="project1.jpg" alt="PTO Design">
-            <div><b>PTO Design</b><br/>2024 – Heavy-duty power take-off unit.</div>
-          </div>
-          <div class="project">
-            <img src="project2.jpg" alt="Gearbox 2-stage">
-            <div><b>2-stage Gearbox</b><br/>Industrial application.</div>
-          </div>
-          <div class="project">
-            <img src="project3.jpg" alt="CoreXY 3D Printer">
-            <div><b>CoreXY 1000×1000×1000 3D Printer</b><br/>Large-volume AM prototype.</div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
-      </div>
-    </section>
+    !-- ====== PROJECTS PAGE SECTION ====== --
+    section id=projects class=page
+      div class=card
+        h2Projectsh2
+        pSome of my mechanical design & manufacturing projects.p
+        div class=project-grid
+          div class=project
+            img src=project1.jpg alt=PTO Design
+            divbPTO Designbbr2024 – Heavy-duty power take-off unit.div
+          div
+          div class=project
+            img src=project2.jpg alt=Gearbox 2-stage
+            divb2-stage GearboxbbrIndustrial application.div
+          div
+          div class=project
+            img src=project3.jpg alt=CoreXY 3D Printer
+            divbCoreXY 1000×1000×1000 3D PrinterbbrLarge-volume AM prototype.div
+          div
+        div
+      div
+      div class=card
+        pa class=inline-btn onclick=showPage('home')← Back to homeap
+      div
+    section
 
-    <!-- ====== CONTACT PAGE SECTION ====== -->
-    <section id="contact" class="page">
-      <div class="card">
-        <h2>Contact</h2>
-        <p>Email: <b><a href="mailto:ilkinshahbazov@gmail.com" style="color:inherit;">ilkinshahbazov@gmail.com</a></b></p>
-        <p>LinkedIn: <b><a href="https://www.linkedin.com/in/ilkin-shahbazov/" target="_blank" style="color:inherit;">linkedin.com/in/ilkin-shahbazov/</a></b></p>
-        <p>Location: Azerbaijan / Türkiye</p>
-      </div>
-      <div class="card">
-        <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
-      </div>
-    </section>
+    !-- ====== CONTACT PAGE SECTION ====== --
+    section id=contact class=page
+      div class=card
+        h2Contacth2
+        pEmail ba href=mailtoilkinshahbazov@gmail.com style=colorinherit;ilkinshahbazov@gmail.comabp
+        pLinkedIn ba href=httpswww.linkedin.cominilkin-shahbazov target=_blank style=colorinherit;linkedin.cominilkin-shahbazovabp
+        pLocation Azerbaijan  Türkiyep
+      div
+      div class=card
+        pa class=inline-btn onclick=showPage('home')← Back to homeap
+      div
+    section
 
-    <!-- ====== CERT: CSWP DETAIL PAGE ====== -->
-    <section id="cswp" class="page">
-      <div class="card">
-        <!-- HERO -->
-        <div class="cert-hero">
-          <img src="cswp-hero.jpg" alt="SOLIDWORKS CSWP Mechanical Design">
-        </div>
+    !-- ====== CERT CSWP DETAIL PAGE ====== --
+    section id=cswp class=page
+      div class=card
+        !-- HERO --
+        div class=cert-hero
+          img src=cswp-hero.jpg alt=SOLIDWORKS CSWP Mechanical Design
+        div
 
-        <h2>CSWP — SOLIDWORKS CAD Design Professional</h2>
-        <p>
-          Verified credential:
-          <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9V4DE2M7NT" target="_blank" rel="noopener" style="color:inherit;">
+        h2CSWP — SOLIDWORKS CAD Design Professionalh2
+        p
+          Verified credential
+          ba href=httpscv.virtualtester.comqrb=SLDWRKS&i=C-9V4DE2M7NT target=_blank rel=noopener style=colorinherit;
             View my CSWP credential
-          </a></b>
-        </p>
-        <p>
-          Official certification page:
-          <a href="https://www.solidworks.com/certifications/solidworks-cad-design-professional"
-             target="_blank" rel="noopener" style="color:inherit;">
-             solidworks.com/certifications/solidworks-cad-design-professional
-          </a>
-        </p>
+          ab
+        p
+        p
+          Official certification page
+          a href=httpswww.solidworks.comcertificationssolidworks-cad-design-professional
+             target=_blank rel=noopener style=colorinherit;
+             solidworks.comcertificationssolidworks-cad-design-professional
+          a
+        p
 
-        <h3>What this certification covers (summary)</h3>
-        <ul>
-          <li>Create &amp; modify fully-defined parametric parts per given drawings/specs.</li>
-          <li>Use design intent with sketches, constraints, equations, and global variables.</li>
-          <li>Advanced features: revolves, sweeps, lofts, shells, fillets/chamfers, patterns.</li>
-          <li>Configurations &amp; design tables to handle design variants quickly.</li>
-          <li>Evaluate mass properties/center of mass; meet tolerance targets after changes.</li>
-        </ul>
+        h3What this certification covers (summary)h3
+        ul
+          liCreate &amp; modify fully-defined parametric parts per given drawingsspecs.li
+          liUse design intent with sketches, constraints, equations, and global variables.li
+          liAdvanced features revolves, sweeps, lofts, shells, filletschamfers, patterns.li
+          liConfigurations &amp; design tables to handle design variants quickly.li
+          liEvaluate mass propertiescenter of mass; meet tolerance targets after changes.li
+        ul
 
-        <h3>Download credential PDF</h3>
-        <p><a href="cswp.pdf" target="_blank" rel="noopener" style="color:inherit;">
+        h3Download credential PDFh3
+        pa href=cswp.pdf target=_blank rel=noopener style=colorinherit;
           Download my CSWP certificate (PDF)
-        </a></p>
-      </div>
-      <div class="card">
-        <p>
-          <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a class="inline-btn" onclick="showPage('home')">Home</a>
-        </p>
-      </div>
-    </section>
+        ap
+      div
+      div class=card
+        p
+          a class=inline-btn onclick=showPage('certs')← Back to Certificatesa
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          a class=inline-btn onclick=showPage('home')Homea
+        p
+      div
+    section
 
-    <!-- ====== CERT: CSWPA-SM DETAIL PAGE ====== -->
-    <section id="cswpa-sm" class="page">
-      <div class="card">
-        <!-- HERO -->
-        <div class="cert-hero">
-          <img src="cswpa-sm-hero.jpg" alt="SOLIDWORKS Sheet Metal Professional (CSWP-SM)">
-        </div>
+    !-- ====== CERT CSWPA-SM DETAIL PAGE ====== --
+    section id=cswpa-sm class=page
+      div class=card
+        !-- HERO --
+        div class=cert-hero
+          img src=cswpa-sm-hero.jpg alt=SOLIDWORKS Sheet Metal Professional (CSWP-SM)
+        div
 
-        <h2>CSWP-SM — SOLIDWORKS Sheet Metal Professional</h2>
-        <p>
-          Verified credential:
-          <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-P6YW5MLHN4" target="_blank" rel="noopener" style="color:inherit;">
+        h2CSWP-SM — SOLIDWORKS Sheet Metal Professionalh2
+        p
+          Verified credential
+          ba href=httpscv.virtualtester.comqrb=SLDWRKS&i=C-P6YW5MLHN4 target=_blank rel=noopener style=colorinherit;
             View my CSWPA–SM credential
-          </a></b>
-        </p>
-        <p>
-          Official certification page:
-          <a href="https://www.solidworks.com/certifications/cswpa-sheet-metal" target="_blank" rel="noopener" style="color:inherit;">
-            solidworks.com/certifications/cswpa-sheet-metal
-          </a>
-        </p>
+          ab
+        p
+        p
+          Official certification page
+          a href=httpswww.solidworks.comcertificationscswpa-sheet-metal target=_blank rel=noopener style=colorinherit;
+            solidworks.comcertificationscswpa-sheet-metal
+          a
+        p
 
-        <h3>What this certification covers (summary)</h3>
-        <ul>
-          <li>Sheet metal part creation from solid bodies or sketches; base flange & edge flange.</li>
-          <li>Bend features: sketched/hem/jog, miter & closed corners, break-corner/fillet.</li>
-          <li>Forming tools, louvers, beads; relief types and corner treatments.</li>
-          <li>Flatten, bend tables, K-factor / bend allowance basics, manufacturing readiness.</li>
-          <li>Editing bends, unfold/refold sequences; DXF export considerations.</li>
-        </ul>
+        h3What this certification covers (summary)h3
+        ul
+          liSheet metal part creation from solid bodies or sketches; base flange & edge flange.li
+          liBend features sketchedhemjog, miter & closed corners, break-cornerfillet.li
+          liForming tools, louvers, beads; relief types and corner treatments.li
+          liFlatten, bend tables, K-factor  bend allowance basics, manufacturing readiness.li
+          liEditing bends, unfoldrefold sequences; DXF export considerations.li
+        ul
 
-        <h3>Download credential PDF</h3>
-        <p><a href="cswpa-sheet-metal.pdf" target="_blank" rel="noopener" style="color:inherit;">
+        h3Download credential PDFh3
+        pa href=cswpa-sheet-metal.pdf target=_blank rel=noopener style=colorinherit;
           Download my CSWPA–SM certificate (PDF)
-        </a></p>
-      </div>
-      <div class="card">
-        <p>
-          <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a class="inline-btn" onclick="showPage('home')">Home</a>
-        </p>
-      </div>
-    </section>
+        ap
+      div
+      div class=card
+        p
+          a class=inline-btn onclick=showPage('certs')← Back to Certificatesa
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          a class=inline-btn onclick=showPage('home')Homea
+        p
+      div
+    section
 
-    <!-- ====== CERT: CSWPA-WD DETAIL PAGE ====== -->
-    <section id="cswpa-wd" class="page">
-      <div class="card">
-        <!-- HERO (same as Sheet Metal) -->
-        <div class="cert-hero">
-          <img src="cswpa-sm-hero.jpg" alt="SOLIDWORKS Weldments Professional (CSWPA-WD)">
-        </div>
+    !-- ====== CERT CSWPA-WD DETAIL PAGE ====== --
+    section id=cswpa-wd class=page
+      div class=card
+        !-- HERO (same as Sheet Metal) --
+        div class=cert-hero
+          img src=cswpa-sm-hero.jpg alt=SOLIDWORKS Weldments Professional (CSWPA-WD)
+        div
 
-        <h2>CSWPA-WD — SOLIDWORKS Weldments Professional</h2>
-        <p>
-          Verified credential:
-          <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-DZXKHBS53J" target="_blank" rel="noopener" style="color:inherit;">
+        h2CSWPA-WD — SOLIDWORKS Weldments Professionalh2
+        p
+          Verified credential
+          ba href=httpscv.virtualtester.comqrb=SLDWRKS&i=C-DZXKHBS53J target=_blank rel=noopener style=colorinherit;
             View my CSWPA-WD credential
-          </a></b>
-        </p>
-        <p>
-          Official certification page:
-          <a href="https://www.solidworks.com/certifications/advanced-weldments-cswpa-wd" target="_blank" rel="noopener" style="color:inherit;">
-            solidworks.com/certifications/advanced-weldments-cswpa-wd
-          </a>
-        </p>
+          ab
+        p
+        p
+          Official certification page
+          a href=httpswww.solidworks.comcertificationsadvanced-weldments-cswpa-wd target=_blank rel=noopener style=colorinherit;
+            solidworks.comcertificationsadvanced-weldments-cswpa-wd
+          a
+        p
 
-        <h3>What this certification covers (summary)</h3>
-        <ul>
-          <li>Weldments environment, structural members & custom profiles.</li>
-          <li>Groups, corner/miter treatments; Trim/Extend operations.</li>
-          <li>Gussets, end caps, weld beads; slot/tab basics.</li>
-          <li>Cut-List creation, properties, bounding box, part numbering.</li>
-          <li>Drawing prep for weldments: views, BOM/Cut-List tables.</li>
-        </ul>
+        h3What this certification covers (summary)h3
+        ul
+          liWeldments environment, structural members & custom profiles.li
+          liGroups, cornermiter treatments; TrimExtend operations.li
+          liGussets, end caps, weld beads; slottab basics.li
+          liCut-List creation, properties, bounding box, part numbering.li
+          liDrawing prep for weldments views, BOMCut-List tables.li
+        ul
 
-        <h3>Download credential PDF</h3>
-        <p><a href="cswpa-wd.pdf" target="_blank" rel="noopener" style="color:inherit;">
+        h3Download credential PDFh3
+        pa href=cswpa-wd.pdf target=_blank rel=noopener style=colorinherit;
           Download my CSWPA-WD certificate (PDF)
-        </a></p>
-      </div>
-      <div class="card">
-        <p>
-          <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a class="inline-btn" onclick="showPage('home')">Home</a>
-        </p>
-      </div>
-    </section>
+        ap
+      div
+      div class=card
+        p
+          a class=inline-btn onclick=showPage('certs')← Back to Certificatesa
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          a class=inline-btn onclick=showPage('home')Homea
+        p
+      div
+    section
 
-    <!-- ====== CERT: CSWA-AM DETAIL PAGE ====== -->
-    <section id="cswa-am" class="page">
-      <div class="card">
-        <!-- HERO -->
-        <div class="cert-hero">
-          <img src="cswa-am.png" alt="SOLIDWORKS Additive Manufacturing Associate (CSWA-AM)">
-        </div>
+    !-- ====== CERT CSWA-AM DETAIL PAGE ====== --
+    section id=cswa-am class=page
+      div class=card
+        !-- HERO --
+        div class=cert-hero
+          img src=cswa-am.png alt=SOLIDWORKS Additive Manufacturing Associate (CSWA-AM)
+        div
 
-        <h2>CSWA-AM — SOLIDWORKS Additive Manufacturing Associate</h2>
-        <p>
-          Verified credential:
-          <b><a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-GWME5JQ9N2" target="_blank" rel="noopener" style="color:inherit;">
+        h2CSWA-AM — SOLIDWORKS Additive Manufacturing Associateh2
+        p
+          Verified credential
+          ba href=httpscv.virtualtester.comqrb=SLDWRKS&i=C-GWME5JQ9N2 target=_blank rel=noopener style=colorinherit;
             View my CSWA-AM credential
-          </a></b>
-        </p>
-        <p>
-          Official certification page:
-          <a href="https://www.solidworks.com/certifications/additive-manufacturing-cswa-additive-manufacturing"
-             target="_blank" rel="noopener" style="color:inherit;">
-            solidworks.com/certifications/additive-manufacturing-cswa-additive-manufacturing
-          </a>
-        </p>
+          ab
+        p
+        p
+          Official certification page
+          a href=httpswww.solidworks.comcertificationsadditive-manufacturing-cswa-additive-manufacturing
+             target=_blank rel=noopener style=colorinherit;
+            solidworks.comcertificationsadditive-manufacturing-cswa-additive-manufacturing
+          a
+        p
 
-        <h3>What this certification covers (summary)</h3>
-        <ul>
-          <li>AM fundamentals: processes (FDM, SLA, SLS, MJF, metal AM) and use-cases.</li>
-          <li>Design for Additive: overhangs, support strategy, wall/feature limits, tolerances.</li>
-          <li>Materials &amp; properties: polymers vs. metals, anisotropy, post-processing basics.</li>
-          <li>Build prep: orientation, nesting, layer height, infill, shells; STL/3MF basics.</li>
-          <li>Quality &amp; safety: defects, warping, validation checks, handling &amp; lab safety.</li>
-        </ul>
+        h3What this certification covers (summary)h3
+        ul
+          liAM fundamentals processes (FDM, SLA, SLS, MJF, metal AM) and use-cases.li
+          liDesign for Additive overhangs, support strategy, wallfeature limits, tolerances.li
+          liMaterials &amp; properties polymers vs. metals, anisotropy, post-processing basics.li
+          liBuild prep orientation, nesting, layer height, infill, shells; STL3MF basics.li
+          liQuality &amp; safety defects, warping, validation checks, handling &amp; lab safety.li
+        ul
 
-        <h3>Download credential PDF</h3>
-        <p><a href="cswa-am.pdf" target="_blank" rel="noopener" style="color:inherit;">
+        h3Download credential PDFh3
+        pa href=cswa-am.pdf target=_blank rel=noopener style=colorinherit;
           Download my CSWA-AM certificate (PDF)
-        </a></p>
-      </div>
-      <div class="card">
-        <p>
-          <a class="inline-btn" onclick="showPage('certs')">← Back to Certificates</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a class="inline-btn" onclick="showPage('home')">Home</a>
-        </p>
-      </div>
-    </section>
+        ap
+      div
+      div class=card
+        p
+          a class=inline-btn onclick=showPage('certs')← Back to Certificatesa
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          a class=inline-btn onclick=showPage('home')Homea
+        p
+      div
+    section
 
-    <!-- ====== EDU: LYCEUM DETAIL PAGE ====== -->
-    <section id="edu-lyceum" class="page">
-      <div class="card">
-        <h2>Lyceum – TDV Baku Turkish Lyceum (2005–2011)</h2>
+    !-- ====== EDU LYCEUM DETAIL PAGE ====== --
+    section id=edu-lyceum class=page
+      div class=card
+        h2Lyceum – TDV Baku Turkish Lyceum (2005–2011)h2
 
-        <h3>About the school</h3>
-        <p>
-          <b>TDV Baku Turkish Lyceum</b> (Türkiye Diyanet Vakfı Bakü Türk Lisesi) is a
+        h3About the schoolh3
+        p
+          bTDV Baku Turkish Lyceumb (Türkiye Diyanet Vakfı Bakü Türk Lisesi) is a
           Turkish-supported secondary school in Baku, founded in cooperation with local
           education authorities. The lyceum follows a rigorous, Turkish-style high-school
           curriculum with strong emphasis on mathematics, physics, and language education.
           Instruction is primarily in Turkish and Azerbaijani, with English as a foreign language.
           The school is known for discipline, community values, Olympiad preparation and
           high university placement rates in Türkiye, Azerbaijan and Europe.
-        </p>
+        p
 
-        <h3>My track & achievements</h3>
-        <ul>
-          <li>Science Track (STEM-oriented program)</li>
-          <li><b>Graduated with Gold Medal</b></li>
-          <li>Azerbaijan national university entrance exam (2011):
-              <b>632 / 700</b> — approx. <b>top 0.1%</b> nationwide*</li>
-        </ul>
-        <p style="opacity:.8"><small>*Approximation based on typical score distributions for that year.</small></p>
-      </div>
-      <div class="card">
-        <p>
-          <a class="inline-btn" onclick="showPage('edu')">← Back to Education</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a class="inline-btn" onclick="showPage('home')">Home</a>
-        </p>
-      </div>
-    </section>
+        h3My track & achievementsh3
+        ul
+          liScience Track (STEM-oriented program)li
+          libGraduated with Gold Medalbli
+          liAzerbaijan national university entrance exam (2011)
+              b632  700b — approx. btop 0.1%b nationwideli
+        ul
+        p style=opacity.8smallApproximation based on typical score distributions for that year.smallp
+      div
+      div class=card
+        p
+          a class=inline-btn onclick=showPage('edu')← Back to Educationa
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          a class=inline-btn onclick=showPage('home')Homea
+        p
+      div
+    section
 
-    <!-- ====== EDU: BACHELOR DETAIL PAGE ====== -->
-    <section id="edu-bachelor" class="page">
-      <div class="card">
-        <h2>Bachelor of Science — Mechanical Engineering</h2>
-        <p>(Fill in your university name, city, years, notable courses/projects, scholarships, GPA, etc.)</p>
-      </div>
-      <div class="card">
-        <p>
-          <a class="inline-btn" onclick="showPage('edu')">← Back to Education</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a class="inline-btn" onclick="showPage('home')">Home</a>
-        </p>
-      </div>
-    </section>
+ <!-- ====== EDU BACHELOR DETAIL PAGE ====== -->
+<section id="edu-bachelor" class="page">
+  <div class="card">
 
-    <!-- ====== EDU: MASTER DETAIL PAGE ====== -->
-    <section id="edu-master" class="page">
-      <div class="card">
-        <h2>Master of Science — Mechanical / Manufacturing Engineering</h2>
-        <p>(Fill in your university name, thesis title, advisor, research focus, publications, etc.)</p>
-      </div>
-      <div class="card">
-        <p>
-          <a class="inline-btn" onclick="showPage('edu')">← Back to Education</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a class="inline-btn" onclick="showPage('home')">Home</a>
-        </p>
-      </div>
-    </section>
+    <!-- HERO IMAGE (METU ME) -->
+    <div class="cert-hero">
+      <img src="metu-me.png" alt="METU Department of Mechanical Engineering">
+    </div>
+
+    <h2>Middle East Technical University (METU) — B.Sc. Mechanical Engineering</h2>
+
+    <p>
+      <b>Enrollment:</b> 01 Sep 2012<br>
+      <b>Graduation:</b> 19 Jan 2019
+    </p>
+
+    <p>
+      I completed my Bachelor’s degree in Mechanical Engineering at Middle East Technical University (METU),
+      one of the leading engineering schools in the region. The program provided a strong foundation in
+      thermodynamics, fluid mechanics, solid mechanics, machine design, and manufacturing. Throughout my
+      education, I strengthened my analytical thinking and practical engineering skills through laboratory work,
+      design-based courses, and intensive hands-on training.
+    </p>
+
+    <p>
+      <b>Curriculum (official):</b>
+      <a href="https://me.metu.edu.tr/undergraduate" target="_blank" rel="noopener" style="color:inherit;">
+        me.metu.edu.tr/undergraduate
+      </a>
+    </p>
+
+    <h3>Selected 4th Year Courses (Mandatory &amp; Electives)</h3>
+    <ul>
+      <li><b>ME 400</b> — Summer Practice II</li>
+      <li><b>ME 402</b> — Fluid Machinery</li>
+      <li><b>ME 410</b> — Mechanical Engineering Systems Laboratory</li>
+      <li><b>ME 418</b> — Dynamics of Machinery</li>
+      <li><b>ME 421</b> — Steam Generator and Heat Exchanger Design</li>
+      <li><b>ME 438</b> — Theory of Combustion</li>
+      <li><b>ME 485</b> — Computational Fluid Dynamics Using Finite Volume Method</li>
+    </ul>
 
   </div>
 
-  <!-- ====== JS: SIMPLE PAGE SWITCHING + BACK HISTORY ====== -->
-  <script>
-    // Start at 'home'
+  <div class="card">
+    <p>
+      <a class="inline-btn" onclick="showPage('edu')">← Back to Education</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a class="inline-btn" onclick="showPage('home')">Home</a>
+    </p>
+  </div>
+</section>
+
+
+    !-- ====== EDU MASTER DETAIL PAGE ====== --
+    section id=edu-master class=page
+      div class=card
+        h2Master of Science — Mechanical  Manufacturing Engineeringh2
+        p(Fill in your university name, thesis title, advisor, research focus, publications, etc.)p
+      div
+      div class=card
+        p
+          a class=inline-btn onclick=showPage('edu')← Back to Educationa
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          a class=inline-btn onclick=showPage('home')Homea
+        p
+      div
+    section
+
+  div
+
+  !-- ====== JS SIMPLE PAGE SWITCHING + BACK HISTORY ====== --
+  script
+     Start at 'home'
     const historyStack = ['home'];
 
-    // Map detail pages to their parent nav button
+     Map detail pages to their parent nav button
     const navMap = {
-      'cswp':'certs', 'cswpa-sm':'certs', 'cswpa-wd':'certs', 'cswa-am':'certs',
-      'edu-lyceum':'edu', 'edu-bachelor':'edu', 'edu-master':'edu'
+      'cswp''certs', 'cswpa-sm''certs', 'cswpa-wd''certs', 'cswa-am''certs',
+      'edu-lyceum''edu', 'edu-bachelor''edu', 'edu-master''edu'
     };
 
     function showPage(id) {
-      // show page
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+       show page
+      document.querySelectorAll('.page').forEach(p = p.classList.remove('active'));
       document.getElementById(id).classList.add('active');
 
-      // highlight nav
-      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-      const btn = document.getElementById('btn-' + (navMap[id] || id));
+       highlight nav
+      document.querySelectorAll('nav button').forEach(b = b.classList.remove('active'));
+      const btn = document.getElementById('btn-' + (navMap[id]  id));
       if (btn) btn.classList.add('active');
 
-      // history
+       history
       const last = historyStack[historyStack.length - 1];
       if (last !== id) historyStack.push(id);
     }
 
     function goBack() {
-      if (historyStack.length > 1) {
+      if (historyStack.length  1) {
         historyStack.pop();
         const prev = historyStack[historyStack.length - 1];
         showPage(prev);
@@ -495,6 +534,6 @@
         showPage('home');
       }
     }
-  </script>
-</body>
-</html>
+  script
+body
+html

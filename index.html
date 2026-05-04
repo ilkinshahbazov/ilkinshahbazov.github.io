@@ -618,45 +618,173 @@
         </p>
       </div>
     </section>
-
-  <!-- ====== JS: PAGE SWITCHING + BACK HISTORY ====== -->
+  </div>
+    
+   <!-- ====== JS: PAGE SWITCHING + BACK HISTORY + REFRESH MEMORY ====== -->
   <script>
-    const historyStack = ['home'];
+    const STORAGE_KEY = 'ishPortfolioLastPage';
+    const SCROLL_KEY_PREFIX = 'ishPortfolioScroll_';
 
     // Detail pages -> which main nav should highlight
     const navMap = {
-      'cswp': 'certs', 'cswpa-sm': 'certs', 'cswpa-wd': 'certs', 'cswa-am': 'certs',
-      'edu-lyceum': 'edu', 'edu-bachelor': 'edu', 'edu-master': 'edu'
+      'cswp': 'certs',
+      'cswpa-sm': 'certs',
+      'cswpa-wd': 'certs',
+      'cswa-am': 'certs',
+      'edu-lyceum': 'edu',
+      'edu-bachelor': 'edu',
+      'edu-master': 'edu'
     };
 
-    function showPage(id){
-      // show page
+    let currentPage = 'home';
+    const historyStack = [];
+
+    // Prevent browser from forcing its own scroll restoration
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function pageExists(id) {
+      return !!document.getElementById(id);
+    }
+
+    function saveScrollPosition(id) {
+      if (!id) return;
+      localStorage.setItem(SCROLL_KEY_PREFIX + id, String(window.scrollY || window.pageYOffset || 0));
+    }
+
+    function getSavedScrollPosition(id) {
+      const value = localStorage.getItem(SCROLL_KEY_PREFIX + id);
+      return value ? parseInt(value, 10) : 0;
+    }
+
+    function getInitialPage() {
+      // 1) First priority: URL hash, e.g. #edu-master
+      const hashId = window.location.hash ? window.location.hash.replace('#', '') : '';
+
+      if (hashId && pageExists(hashId)) {
+        return hashId;
+      }
+
+      // 2) Second priority: last saved page
+      const savedPage = localStorage.getItem(STORAGE_KEY);
+
+      if (savedPage && pageExists(savedPage)) {
+        return savedPage;
+      }
+
+      // 3) Fallback
+      return 'home';
+    }
+
+    function updateUrlHash(id) {
+      if (window.location.hash !== '#' + id) {
+        history.replaceState(null, '', '#' + id);
+      }
+    }
+
+    function highlightNav(id) {
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+
+      const mainId = navMap[id] || id;
+      const btn = document.getElementById('btn-' + mainId);
+
+      if (btn) {
+        btn.classList.add('active');
+      }
+    }
+
+    function showPage(id, options = {}) {
+      const {
+        addToHistory = true,
+        savePage = true,
+        updateHash = true,
+        restoreScroll = false
+      } = options;
+
+      if (!pageExists(id)) {
+        id = 'home';
+      }
+
+      // Save previous page scroll position before changing page
+      saveScrollPosition(currentPage);
+
+      // Show selected page
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById(id).classList.add('active');
 
-      // highlight nav
-      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-      const mainId = navMap[id] || id; // map detail -> parent
-      const btn = document.getElementById('btn-' + mainId);
-      if(btn) btn.classList.add('active');
+      // Update current page
+      currentPage = id;
 
-      // history push
-      const last = historyStack[historyStack.length - 1];
-      if(last !== id) historyStack.push(id);
+      // Highlight correct menu button
+      highlightNav(id);
+
+      // Save last page for refresh
+      if (savePage) {
+        localStorage.setItem(STORAGE_KEY, id);
+      }
+
+      // Keep URL like #edu-master
+      // setTimeout prevents href="#" links from overriding the hash
+      if (updateHash) {
+        setTimeout(() => updateUrlHash(id), 0);
+      }
+
+      // Internal history stack
+      if (addToHistory) {
+        const last = historyStack[historyStack.length - 1];
+        if (last !== id) {
+          historyStack.push(id);
+        }
+      }
+
+      // Scroll behavior
+      if (restoreScroll) {
+        const savedY = getSavedScrollPosition(id);
+        setTimeout(() => window.scrollTo(0, savedY), 0);
+      } else {
+        window.scrollTo(0, 0);
+      }
     }
 
-    function goBack(){
-      if(historyStack.length > 1){
+    function goBack() {
+      saveScrollPosition(currentPage);
+
+      if (historyStack.length > 1) {
         historyStack.pop();
         const prev = historyStack[historyStack.length - 1];
-        showPage(prev);
-      }else{
+
+        showPage(prev, {
+          addToHistory: false,
+          savePage: true,
+          updateHash: true,
+          restoreScroll: true
+        });
+      } else {
         showPage('home');
       }
     }
 
-    // set active on load
-    document.getElementById('btn-home').classList.add('active');
+    // Save scroll position while browsing
+    window.addEventListener('scroll', () => {
+      saveScrollPosition(currentPage);
+    });
+
+    // Save scroll position before refresh / close
+    window.addEventListener('beforeunload', () => {
+      saveScrollPosition(currentPage);
+    });
+
+    // Open last visited page on refresh
+    const initialPage = getInitialPage();
+    historyStack.push(initialPage);
+
+    showPage(initialPage, {
+      addToHistory: false,
+      savePage: true,
+      updateHash: true,
+      restoreScroll: true
+    });
   </script>
 
 </body>

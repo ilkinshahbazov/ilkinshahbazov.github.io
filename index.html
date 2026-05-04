@@ -131,6 +131,46 @@
       object-fit:cover;
     }
 
+    /* ====== MASTER EDUCATION HERO & WATERMARK ====== */
+    .master-card{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .master-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url("gazi_logo.png");
+      background-repeat:no-repeat;
+      background-position:center 180px;
+      background-size:420px auto;
+      opacity:0.055;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .master-card > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .master-hero{
+      border-radius:14px;
+      overflow:hidden;
+      margin-bottom:16px;
+      border:1px solid var(--border);
+      background:#fff;
+    }
+
+    .master-hero img{
+      width:100%;
+      display:block;
+      max-height:260px;
+      object-fit:contain;
+    }
+
+    
     /* ====== RESPONSIVE ====== */
     @media (max-width:600px){
       header{ flex-wrap:wrap; }
@@ -525,8 +565,13 @@
     </section>
 
         <!-- ====== EDU: MASTER DETAIL PAGE ====== -->
-    <section id="edu-master" class="page">
-      <div class="card">
+       <section id="edu-master" class="page">
+      <div class="card master-card">
+
+        <div class="master-hero">
+          <img src="a.jpg" alt="Gazi University Technology Faculty">
+        </div>
+
         <h2>Gazi University — M.Sc. Manufacturing Engineering</h2>
 
         <p>

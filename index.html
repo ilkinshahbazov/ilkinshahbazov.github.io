@@ -292,25 +292,38 @@
       </div>
     </section>
 
-    <!-- ====== EDUCATION PAGE SECTION ====== -->
+       <!-- ====== EDUCATION PAGE SECTION ====== -->
     <section id="edu" class="page">
       <div class="card">
         <h2>Education</h2>
-        <ol>
-          <li>
-            <a href="#" onclick="showPage('edu-lyceum')"><b>Lyceum – TDV Baku Turkish Lyceum</b></a>
-            — <small>2005–2011</small>
-          </li>
-          <li>
-            <a href="#" onclick="showPage('edu-bachelor')"><b>Bachelor of Science</b></a>
-            — <small>Mechanical Engineering</small>
-          </li>
-          <li>
-            <a href="#" onclick="showPage('edu-master')"><b>Master of Science</b></a>
-            — <small>Mechanical / Manufacturing Engineering</small>
-          </li>
-        </ol>
+
+        <div class="edu-list">
+          <a href="#" class="edu-button" onclick="showPage('edu-lyceum')">
+            <div>
+              <div class="edu-button-title">Lyceum</div>
+              <div class="edu-button-sub">TDV Baku Turkish Lyceum</div>
+            </div>
+            <div class="edu-button-year">2005–2011</div>
+          </a>
+
+          <a href="#" class="edu-button" onclick="showPage('edu-bachelor')">
+            <div>
+              <div class="edu-button-title">Bachelor of Science</div>
+              <div class="edu-button-sub">Mechanical Engineering</div>
+            </div>
+            <div class="edu-button-year">B.Sc.</div>
+          </a>
+
+          <a href="#" class="edu-button" onclick="showPage('edu-master')">
+            <div>
+              <div class="edu-button-title">Master of Science</div>
+              <div class="edu-button-sub">Mechanical / Manufacturing Engineering</div>
+            </div>
+            <div class="edu-button-year">M.Sc.</div>
+          </a>
+        </div>
       </div>
+
       <div class="card">
         <p><a class="inline-btn" onclick="showPage('home')">← Back to home</a></p>
       </div>

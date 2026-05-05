@@ -172,6 +172,72 @@
       }
     }
 
+    /* ====== DOCUMENT BUTTONS ====== */
+    .doc-button-list{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:12px;
+      margin-bottom:18px;
+    }
+
+    .doc-button{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      width:100%;
+      box-sizing:border-box;
+      padding:16px 18px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#ffffff;
+      color:var(--text);
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,.04);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+      cursor:pointer;
+    }
+
+    .doc-button:hover{
+      transform:scale(1.02);
+      box-shadow:0 10px 22px rgba(0,0,0,.08);
+      border-color:#d1d5db;
+      background:#fcfcfd;
+    }
+
+    .doc-button-title{
+      font-size:20px;
+      font-weight:700;
+      line-height:1.2;
+      color:#4c1d95;
+    }
+
+    .doc-button-sub{
+      font-size:14px;
+      color:#374151;
+      margin-top:5px;
+    }
+
+    .doc-button-tag{
+      font-size:14px;
+      font-weight:700;
+      color:#fff;
+      background:var(--accent);
+      padding:7px 11px;
+      border-radius:999px;
+      white-space:nowrap;
+      flex-shrink:0;
+    }
+
+    @media (max-width:700px){
+      .doc-button{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+
     
     /* ====== LINKS ====== */
     a.inline-btn{

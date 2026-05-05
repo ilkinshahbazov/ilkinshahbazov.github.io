@@ -102,6 +102,77 @@
     .project img{ width:100%; display:block; }
     .project div{ padding:10px 12px 14px; }
 
+
+    /* ====== EDUCATION BUTTON LIST ====== */
+    .edu-list{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:10px;
+    }
+
+    .edu-button{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      width:100%;
+      box-sizing:border-box;
+      padding:16px 18px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#ffffff;
+      color:var(--text);
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,.04);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+      cursor:pointer;
+    }
+
+    .edu-button:hover{
+      transform:scale(1.02);
+      box-shadow:0 10px 22px rgba(0,0,0,.08);
+      border-color:#d1d5db;
+      background:#fcfcfd;
+    }
+
+    .edu-button-title{
+      font-size:24px;
+      font-weight:700;
+      line-height:1.2;
+      color:#4c1d95;
+    }
+
+    .edu-button-sub{
+      font-size:16px;
+      color:#374151;
+      margin-top:4px;
+    }
+
+    .edu-button-year{
+      font-size:15px;
+      font-weight:600;
+      color:#6b7280;
+      white-space:nowrap;
+      flex-shrink:0;
+    }
+
+    @media (max-width:700px){
+      .edu-button{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .edu-button-year{
+        white-space:normal;
+      }
+
+      .edu-button-title{
+        font-size:20px;
+      }
+    }
+
+    
     /* ====== LINKS ====== */
     a.inline-btn{
       color:var(--accent);

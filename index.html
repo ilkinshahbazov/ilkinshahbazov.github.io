@@ -305,6 +305,80 @@
       }
     }
     
+
+    /* ====== EXPERIENCE BUTTON LIST ====== */
+    .exp-list{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:10px;
+    }
+
+    .exp-button{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      width:100%;
+      box-sizing:border-box;
+      padding:17px 18px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#ffffff;
+      color:var(--text);
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,.04);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+      cursor:default;
+    }
+
+    .exp-button:hover{
+      transform:scale(1.02);
+      box-shadow:0 10px 22px rgba(0,0,0,.08);
+      border-color:#d1d5db;
+      background:#fcfcfd;
+    }
+
+    .exp-button-title{
+      font-size:22px;
+      font-weight:700;
+      line-height:1.2;
+      color:#4c1d95;
+    }
+
+    .exp-button-sub{
+      font-size:15px;
+      color:#374151;
+      margin-top:6px;
+    }
+
+    .exp-button-date{
+      font-size:14px;
+      font-weight:700;
+      color:#fff;
+      background:var(--accent);
+      padding:7px 11px;
+      border-radius:999px;
+      white-space:nowrap;
+      flex-shrink:0;
+      text-align:center;
+    }
+
+    @media (max-width:700px){
+      .exp-button{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .exp-button-title{
+        font-size:19px;
+      }
+
+      .exp-button-date{
+        white-space:normal;
+      }
+    }
+
     /* ====== LINKS ====== */
     a.inline-btn{
       color:var(--accent);
@@ -414,8 +488,8 @@
     <section id="home" class="page active">
       <div class="card">
         <h2>Mechanical / R&amp;D Engineer</h2>
-        <p><b>PTO, gearbox, transfer case, 3D printing</b> focused mechanical engineer. Here you can see selected industry projects, seminars and certificates.</p>
-        <p><a class="inline-btn" onclick="showPage('projects')">→ View projects</a></p>
+        <p><b>PTO, gearbox, transfer case, 3D printing</b> focused mechanical engineer. Here you can see selected professional experience, education, certificates and projects.</p>
+        <p><a class="inline-btn" onclick="showPage('projects')">→ View experience</a></p>
       </div>
 
       <div class="card">
@@ -506,26 +580,67 @@
       </div>
     </section>
 
-    <!-- ====== PROJECTS PAGE SECTION ====== -->
+    <!-- ====== EXPERIENCE PAGE SECTION ====== -->
     <section id="projects" class="page">
       <div class="card">
-        <h2>Projects</h2>
-        <p>Some of my mechanical design &amp; manufacturing projects.</p>
+        <h2>Experience</h2>
+        <p>Professional experience in mechanical design, R&amp;D, manufacturing, additive manufacturing and team leadership.</p>
 
-        <div class="project-grid">
-          <div class="project">
-            <img src="project1.jpg" alt="PTO Design">
-            <div><b>PTO Design</b><br/>2024 – Heavy-duty power take-off unit.</div>
+        <div class="exp-list">
+          <div class="exp-button">
+            <div>
+              <div class="exp-button-title">AzSimX / AZERSILAH</div>
+              <div class="exp-button-sub">Mechanical Design &amp; Manufacturing Team Leader</div>
+            </div>
+            <div class="exp-button-date">July 2025 – Present</div>
           </div>
 
-          <div class="project">
-            <img src="project2.jpg" alt="Gearbox 2-stage">
-            <div><b>2-stage Gearbox</b><br/>Industrial application.</div>
+          <div class="exp-button">
+            <div>
+              <div class="exp-button-title">KOZMAKSAN</div>
+              <div class="exp-button-sub">Senior Mechanical Engineer</div>
+            </div>
+            <div class="exp-button-date">August 2024 – June 2025</div>
           </div>
 
-          <div class="project">
-            <img src="project3.jpg" alt="CoreXY 3D Printer">
-            <div><b>CoreXY 1000×1000×1000 3D Printer</b><br/>Large-volume AM prototype.</div>
+          <div class="exp-button">
+            <div>
+              <div class="exp-button-title">ITOM Engineering / ITAS Engineering</div>
+              <div class="exp-button-sub">Mechanical Design &amp; Manufacturing Team Leader</div>
+            </div>
+            <div class="exp-button-date">April 2023 – July 2024</div>
+          </div>
+
+          <div class="exp-button">
+            <div>
+              <div class="exp-button-title">TEKNOSYS Yazılım</div>
+              <div class="exp-button-sub">Mechanical Engineer</div>
+            </div>
+            <div class="exp-button-date">December 2022 – March 2023</div>
+          </div>
+
+          <div class="exp-button">
+            <div>
+              <div class="exp-button-title">BAMA Teknoloji</div>
+              <div class="exp-button-sub">Mechanical Engineer</div>
+            </div>
+            <div class="exp-button-date">April 2021 – November 2022</div>
+          </div>
+
+          <div class="exp-button">
+            <div>
+              <div class="exp-button-title">ELEGAN Teknoloji</div>
+              <div class="exp-button-sub">Cofounder &amp; Team Leader</div>
+            </div>
+            <div class="exp-button-date">April 2018 – March 2021</div>
+          </div>
+
+          <div class="exp-button">
+            <div>
+              <div class="exp-button-title">LIFATEK Elektronik</div>
+              <div class="exp-button-sub">Part-Time Mechanical Engineer</div>
+            </div>
+            <div class="exp-button-date">November 2016 – March 2018</div>
           </div>
         </div>
       </div>

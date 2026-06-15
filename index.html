@@ -294,10 +294,52 @@
       flex-shrink:0;
     }
 
+    .cert-main{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      min-width:0;
+    }
+
+    .cert-logo{
+      width:86px;
+      height:62px;
+      flex:0 0 86px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--border);
+      border-radius:13px;
+      background:#fff;
+      overflow:hidden;
+      box-shadow:0 2px 6px rgba(0,0,0,.035);
+    }
+
+    .cert-logo img{
+      display:block;
+      max-width:86%;
+      max-height:82%;
+      object-fit:contain;
+    }
+
+    .cert-text{
+      min-width:0;
+    }
+
     @media (max-width:700px){
       .cert-button{
         flex-direction:column;
         align-items:flex-start;
+      }
+
+      .cert-main{
+        width:100%;
+      }
+
+      .cert-logo{
+        width:72px;
+        height:54px;
+        flex-basis:72px;
       }
 
       .cert-button-title{
@@ -602,33 +644,53 @@
 
         <div class="cert-list">
           <a href="#" class="cert-button" onclick="showPage('cswp')">
-            <div>
-              <div class="cert-button-title">SOLIDWORKS CAD Design Professional</div>
-              <div class="cert-button-sub">CSWP — Mechanical Design / CAD Professional Certification</div>
+            <div class="cert-main">
+              <div class="cert-logo">
+                <img src="solidworks-cswp-logo.png" alt="SOLIDWORKS CAD Design Professional badge">
+              </div>
+              <div class="cert-text">
+                <div class="cert-button-title">SOLIDWORKS CAD Design Professional</div>
+                <div class="cert-button-sub">CSWP — Mechanical Design / CAD Professional Certification</div>
+              </div>
             </div>
             <div class="cert-button-tag">Passed</div>
           </a>
 
           <a href="#" class="cert-button" onclick="showPage('cswpa-sm')">
-            <div>
-              <div class="cert-button-title">SOLIDWORKS Sheet Metal Professional</div>
-              <div class="cert-button-sub">CSWP-SM — Sheet Metal Design Certification</div>
+            <div class="cert-main">
+              <div class="cert-logo">
+                <img src="solidworks-cswp-sm-logo.png" alt="SOLIDWORKS Sheet Metal Professional badge">
+              </div>
+              <div class="cert-text">
+                <div class="cert-button-title">SOLIDWORKS Sheet Metal Professional</div>
+                <div class="cert-button-sub">CSWP-SM — Sheet Metal Design Certification</div>
+              </div>
             </div>
             <div class="cert-button-tag">Passed</div>
           </a>
 
           <a href="#" class="cert-button" onclick="showPage('cswpa-wd')">
-            <div>
-              <div class="cert-button-title">SOLIDWORKS Weldments Professional</div>
-              <div class="cert-button-sub">CSWPA-WD — Weldments Design Certification</div>
+            <div class="cert-main">
+              <div class="cert-logo">
+                <img src="solidworks-cswpa-wd-logo.png" alt="SOLIDWORKS Weldments Professional badge">
+              </div>
+              <div class="cert-text">
+                <div class="cert-button-title">SOLIDWORKS Weldments Professional</div>
+                <div class="cert-button-sub">CSWPA-WD — Weldments Design Certification</div>
+              </div>
             </div>
             <div class="cert-button-tag">Passed</div>
           </a>
 
           <a href="#" class="cert-button" onclick="showPage('cswa-am')">
-            <div>
-              <div class="cert-button-title">SOLIDWORKS Additive Manufacturing Associate</div>
-              <div class="cert-button-sub">CSWA-AM — Additive Manufacturing Certification</div>
+            <div class="cert-main">
+              <div class="cert-logo">
+                <img src="solidworks-cswa-am-logo.png" alt="SOLIDWORKS Additive Manufacturing Associate badge">
+              </div>
+              <div class="cert-text">
+                <div class="cert-button-title">SOLIDWORKS Additive Manufacturing Associate</div>
+                <div class="cert-button-sub">CSWA-AM — Additive Manufacturing Certification</div>
+              </div>
             </div>
             <div class="cert-button-tag">Passed</div>
           </a>
